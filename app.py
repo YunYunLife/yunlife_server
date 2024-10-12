@@ -9,6 +9,10 @@ app = Flask(__name__)
 CORS(app)
 
 # MongoDB Routes
+@app.route('/', methods=['GET'])
+def index():
+    return "Hello, This is yunlifeserver!"
+
 @app.route('/articles', methods=['GET'])
 def get_articles():
     result = getCollection(collectionNames.articles)
